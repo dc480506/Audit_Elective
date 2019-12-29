@@ -111,7 +111,7 @@
 				<img src="img/Python.jpeg" alt="Img 1" /></li>
 				<li><img src="img/Java.jpg" alt="Img 2" /></li>
 				<li><img src="img/Robotics.jpg" alt="Img 3" /></li>
-				<li><img src="img/'Machine Learning.jpg'" alt="Img 4" /></li>
+				<li><img src="img/Machine Learning.jpg" alt="Img 4" /></li>
 				<li><img src="img/Tableau.jpg" alt="Img 5" /></li>
 				<li><img src="img/Flutter.png" alt="Img 6" /></li>
 				<li><img src="img/Devops.png" alt="Img 7" /></li>

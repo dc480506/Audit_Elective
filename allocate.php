@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <div class = "row">
       <div class ="col-md-2">
-        <img src="Somaiya.png" alt="Somaiya" width="250" height="100"/>
+        <img src="img/Somaiya.png" alt="Somaiya" width="250" height="100"/>
       </div>
       <div class ="col-md-8 offset-md-0"> 
         <h2 align="center" style='color: white; font-size: 50px'>K.J. Somaiya College of Engineering</h2>

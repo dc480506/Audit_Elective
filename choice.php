@@ -1,52 +1,3 @@
-<?php
-	require("database.php");
-	mysqli_select_db($conn,"audit_course");
-    $msg = "";
-	$msgClass = "";
-	session_start();
-	$email=$_SESSION["email"];
-	$result = mysqli_query($conn,"SELECT EMAILID FROM student WHERE EMAILID = '$email'");
-	$rno=$_SESSION["rno"];
-	$fname=$_SESSION["fname"];
-	$mname=$_SESSION["mname"];
-	$lname=$_SESSION["lname"];
-	$currsem=$_SESSION["currsem"];
-	if(mysqli_num_rows($result) == 1)
-{
-$msg =  'Form Already Submitted';
-$_SESSION['message']="$msg";
-$msgClass = 'alert-danger';
-header("Location: student.php");
-//echo "emailexist";
-}
-else
-{
-
-   	if(filter_has_var(INPUT_POST, "submit"))
-	{
-		$pref1 = htmlspecialchars($_POST["pref1"]);
-		$pref2 = htmlspecialchars($_POST["pref2"]);
-		$pref3 = htmlspecialchars($_POST["pref3"]);
-		if ($pref1 == $pref2 || $pref1 == $pref3 || $pref2 == $pref3)
-		{
-			$msg = 'Duplicate Entries';
-			$msgClass = 'alert-danger';
-		}
-		else
-		{
-			$query = "INSERT INTO student(FNAME,MNAME,LNAME,RNO,PREF1,PREF2,PREF3,EMAILID) VALUES ('$fname','$mname','$lname','$rno','$pref1','$pref2','$pref3','$email')";
-		
-			if(mysqli_query($conn, $query))
-			{
-			$msg =  'Submitted';
-			$_SESSION['message']="$msg";
-			$msgClass = 'alert-success';
-			header("Location: student.php");
-			}
-	    }  
-    }
-}
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,7 +11,7 @@ else
 		<div class = "row">
 			<div class ="col-md-2">
 				<br>
-				<img src="Somaiya.png" alt="Somaiya" width="250" height="100"/>
+				<img src="img/Somaiya.png" alt="Somaiya" width="250" height="100"/>
 			</div>
 			<div class ="col-md-7 offset-md-0">	
 				<h2 align="right" style='color: white; font-family:"Arial, Helvetica, sans-serif"; font-size: 50px'>K.J. Somaiya College of Engineering</h2>
@@ -187,3 +138,52 @@ else
 		<script src="app2.js"></script>
 	</body>
 </html>	
+<?php
+// 	require("database.php");
+// 	mysqli_select_db($conn,"audit_course");
+//     $msg = "";
+// 	$msgClass = "";
+// 	session_start();
+// 	$email=$_SESSION["email"];
+// 	$result = mysqli_query($conn,"SELECT EMAILID FROM student WHERE EMAILID = '$email'");
+// 	$rno=$_SESSION["rno"];
+// 	$fname=$_SESSION["fname"];
+// 	$mname=$_SESSION["mname"];
+// 	$lname=$_SESSION["lname"];
+// 	$currsem=$_SESSION["currsem"];
+// 	if(mysqli_num_rows($result) == 1)
+// {
+// $msg =  'Form Already Submitted';
+// $_SESSION['message']="$msg";
+// $msgClass = 'alert-danger';
+// header("Location: student.php");
+// //echo "emailexist";
+// }
+// else
+// {
+
+//    	if(filter_has_var(INPUT_POST, "submit"))
+// 	{
+// 		$pref1 = htmlspecialchars($_POST["pref1"]);
+// 		$pref2 = htmlspecialchars($_POST["pref2"]);
+// 		$pref3 = htmlspecialchars($_POST["pref3"]);
+// 		if ($pref1 == $pref2 || $pref1 == $pref3 || $pref2 == $pref3)
+// 		{
+// 			$msg = 'Duplicate Entries';
+// 			$msgClass = 'alert-danger';
+// 		}
+// 		else
+// 		{
+// 			$query = "INSERT INTO student(FNAME,MNAME,LNAME,RNO,PREF1,PREF2,PREF3,EMAILID) VALUES ('$fname','$mname','$lname','$rno','$pref1','$pref2','$pref3','$email')";
+		
+// 			if(mysqli_query($conn, $query))
+// 			{
+// 			$msg =  'Submitted';
+// 			$_SESSION['message']="$msg";
+// 			$msgClass = 'alert-success';
+// 			header("Location: student.php");
+// 			}
+// 	    }  
+//     }
+// }
+?>

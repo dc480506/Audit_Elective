@@ -8,11 +8,11 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="style.css?version=51">
+		<link rel="stylesheet" href="css/style.css?version=51">
 		<div class = "row">
 			<div class ="col-md-2">
 				<br>
-				<img src="Somaiya.png" alt="Somaiya" width="250" height="100"/>
+				<img src="img/Somaiya.png" alt="Somaiya" width="250" height="100"/>
 			</div>
 			<div class ="col-md-7 offset-md-0">	
 				<h2 align="right" style='color: white; font-family:"Arial, Helvetica, sans-serif"; font-size: 50px'>K.J. Somaiya College of Engineering</h2>
@@ -99,30 +99,7 @@
 					<body>
     	<form action="displaystudent.php" method="post">
     	<select name='option1' id='option1' >
-	    <?php 
-
 	    
-	    $sql="SELECT * FROM allotment WHERE EMAILID='$email' ";
-	    $result=$conn->query($sql);
-	    echo"<table class='table table-hover' border=5>";
-	        echo"<tr><td><b>FNAME</b></td><td><b>MNAME</b></td><td><b>LNAME</b></td><td><b>RNO</b></td><td><b>EMAILID</b></td><td><b>CID</b></td><td><b>CNAME</b></td></tr>";
-	        while ($row = $result->fetch_assoc())
-	        {
-	            echo"<tr class='table-dark'><td>{$row['FNAME']}</td><td>{$row['MNAME']}</td><td>{$row['LNAME']}</td><td>{$row['RNO']}</td><td>{$row['EMAILID']}</td><td>{$row['CID']}</td><td>{$row['CNAME']}</td></tr>";
-	        }
-	        echo"</table>";
-	    	     
-
-	
-        echo "<label for='option1'>COURSE :</label>"; 
-        echo"<option value= >None</option>";
-        foreach ($conn->query($sql) as $row)
-        {
-        echo "<option name=$row[NAME] value=$row[NAME]>$row[NAME]</option>"; 
-        }
-        echo "</select>";
-        ?>
-
         </select>
         <input type="submit" name="search" value="Go" class="btn btn-primary">
         <button input type="submit" name="submit" value="submit" class="btn btn-primary">Show All</button><br><br>
@@ -180,4 +157,26 @@
 // $email=$_SESSION["email"];
 // $role=$_SESSION["role"];
 ?>
+<?php 
 
+	    
+	    // $sql="SELECT * FROM allotment WHERE EMAILID='$email' ";
+	    // $result=$conn->query($sql);
+	    // echo"<table class='table table-hover' border=5>";
+	    //     echo"<tr><td><b>FNAME</b></td><td><b>MNAME</b></td><td><b>LNAME</b></td><td><b>RNO</b></td><td><b>EMAILID</b></td><td><b>CID</b></td><td><b>CNAME</b></td></tr>";
+	    //     while ($row = $result->fetch_assoc())
+	    //     {
+	    //         echo"<tr class='table-dark'><td>{$row['FNAME']}</td><td>{$row['MNAME']}</td><td>{$row['LNAME']}</td><td>{$row['RNO']}</td><td>{$row['EMAILID']}</td><td>{$row['CID']}</td><td>{$row['CNAME']}</td></tr>";
+	    //     }
+	    //     echo"</table>";
+	    	     
+
+	
+     //    echo "<label for='option1'>COURSE :</label>"; 
+     //    echo"<option value= >None</option>";
+     //    foreach ($conn->query($sql) as $row)
+     //    {
+     //    echo "<option name=$row[NAME] value=$row[NAME]>$row[NAME]</option>"; 
+     //    }
+     //    echo "</select>";
+        ?>

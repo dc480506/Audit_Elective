@@ -8,11 +8,11 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="style.css?version=51">
+		<link rel="stylesheet" href="css/style.css?version=51">
 		<div class = "row">
 			<div class ="col-md-2">
 				<br>
-				<img src="Somaiya.png" alt="Somaiya" width="250" height="100"/>
+				<img src="img/Somaiya.png" alt="Somaiya" width="250" height="100"/>
 			</div>
 			<div class ="col-md-7 offset-md-0">	
 				<h2 align="right" style='color: white; font-family:"Arial, Helvetica, sans-serif"; font-size: 50px'>K.J. Somaiya College of Engineering</h2>
@@ -110,19 +110,7 @@
 					</div>
     	<form action="displayadmin.php" method="post">
     	<select name='option1' id='option1' >
-	    <?php 
 	    
-	   
-	    $sql="SELECT NAME FROM course order by ID";   
-	    
-	    echo "<label for='option1'>COURSE :</label>"; 
-        echo"<option value= >None</option>";
-        foreach ($conn->query($sql) as $row)
-        {
-        echo "<option name=$row[NAME] value=$row[NAME]>$row[NAME]</option>"; 
-        }
-        echo "</select>";
-        ?>
         </select>
         <input type="submit" name="search" value="Go" class="btn btn-primary">
         <button input type="submit" name="submit" value="submit" class="btn btn-primary">Show All</button><br><br>
@@ -179,4 +167,16 @@
 // $email=$_SESSION["email"];
 // $role=$_SESSION["role"];
 ?>
-
+<?php 
+	    
+	   
+	    // $sql="SELECT NAME FROM course order by ID";   
+	    
+	    // echo "<label for='option1'>COURSE :</label>"; 
+     //    echo"<option value= >None</option>";
+     //    foreach ($conn->query($sql) as $row)
+     //    {
+     //    echo "<option name=$row[NAME] value=$row[NAME]>$row[NAME]</option>"; 
+     //    }
+     //    echo "</select>";
+        ?>
