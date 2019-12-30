@@ -9,20 +9,26 @@ if(mysqli_connect_errno())
 {
 	echo "Failed to Connect to MySQL".mysqli_connect_errno();
 }	
-$query = '';
-$sqlScript = file("data/audit_elective.sql");
-foreach ($sqlScript as $line)	{
+else
+{
+	$query = '';
+	$sqlScript = file("data/audit_elective.sql");
+	foreach ($sqlScript as $line)	
+	{
 	
-	$startWith = substr(trim($line), 0 ,2);
-	$endWith = substr(trim($line), -1 ,1);
+		$startWith = substr(trim($line), 0 ,2);
+		$endWith = substr(trim($line), -1 ,1);
 	
-	if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-		continue;
-	}
+		if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') 
+		{
+			continue;
+		}
 		
-	$query = $query . $line;
-	if ($endWith == ';') {
-		mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-		$query= '';		
+		$query = $query . $line;
+		if ($endWith == ';') 
+		{
+			mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+			$query= '';		
+		}
 	}
 }
